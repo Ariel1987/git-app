@@ -1,8 +1,12 @@
+import { Wrapper } from "./Header.styles"
+import SearchBar from "./SearchBar/SearchBar"
+
 const Header = () => {
   return (
-    <div>
-      <img src="./icons/logo.png" alt="logo" />
-    </div>
+    <Wrapper>
+      <img src='/icons/logo.png' alt='logo' />
+      <SearchBar />
+    </Wrapper>
   )
 }
 
