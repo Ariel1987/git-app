@@ -1,8 +1,17 @@
-import { Wrapper } from "./Users.styles"
+import SearchBar from '../SearchBar/SearchBar'
+import User from './User/User'
+import Repositories from '../Repositories/Repositories'
+import { SearchBarWrapper, Wrapper } from './Users.styles'
 
 const Users = () => {
   return (
-    <Wrapper></Wrapper>
+    <Wrapper>
+      <SearchBarWrapper>
+        <SearchBar type='user' />
+      </SearchBarWrapper>
+      <User />
+      <Repositories />
+    </Wrapper>
   )
 }
 
