@@ -4,8 +4,10 @@ export const Wrapper = styled.section`
   ${({ theme }) => css`
     background-color: white;
     grid-area: Users;
-    padding-right: 10%;
-    padding-left: 10%;
+    padding-right: 15%;
+    padding-left: 15%;
+    z-index: 10;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   `}
 `
 
