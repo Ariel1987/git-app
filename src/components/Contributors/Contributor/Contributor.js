@@ -1,14 +1,13 @@
-import { Avatar, Wrapper } from './Repository.styles'
+import { Avatar, Wrapper } from './Contributor.styles'
 
-const Repository = () => {
+const Contributor = () => {
   const n = 5
 
   return (
     <Wrapper>
       <Avatar />
       <div>
-        <h3>Repository name</h3>
-        <p>Author: Ariel Pires de Almeida</p>
+        <h3>User name</h3>
         {[...Array(n)].map((e, i) => (
           <img src="/icons/star.png" alt="star" key={i} />
         ))}
@@ -17,4 +16,4 @@ const Repository = () => {
   )
 }
 
-export default Repository
+export default Contributor

@@ -8,8 +8,8 @@ const User = () => {
         <h1>Ariel1987</h1>
       </div>
       <div>
-        <p>Followers: 70</p>
-        <p>Following: 70</p>
+        <span>Followers: 70</span>
+        <span>Following: 70</span>
       </div>
       <h3>Repositories: 70</h3>
     </Wrapper>

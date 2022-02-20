@@ -8,6 +8,22 @@ export const Wrapper = styled.section`
     padding-left: 15%;
     z-index: 10;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    h1 {
+      font-size: 18px;
+    }
+
+    h2 {
+      padding-top: 40px;
+    }
+
+    h3 {
+      padding-bottom: 4px;
+    }
+
+    p {
+      display: none;
+    }
   `}
 `
 
@@ -25,7 +41,7 @@ export const SearchBarWrapper = styled.section`
       background: url(/icons/search.png) no-repeat scroll right;
       background-size: 24px;
       background-color: white;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
       ::placeholder {
         color: #939393;
@@ -33,4 +49,8 @@ export const SearchBarWrapper = styled.section`
       }
     }
   `}
+`
+
+export const RepositoryWrapper = styled.ul`
+  margin: 0;
 `
