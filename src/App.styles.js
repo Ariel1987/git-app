@@ -8,6 +8,6 @@ export const Wrapper = styled.section`
     grid-template-areas:
       'Header Header Header'
       'Users Repositories Contributors';
-    overflow: hidden;
+    height: 100vh;
   `}
 `

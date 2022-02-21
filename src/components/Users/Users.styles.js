@@ -7,7 +7,7 @@ export const Wrapper = styled.section`
     padding-right: 15%;
     padding-left: 15%;
     z-index: 10;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: 0px 2px 6px -1px rgb(0 0 0 / 35%);
 
     h1 {
       font-size: 18px;
@@ -41,7 +41,7 @@ export const SearchBarWrapper = styled.section`
       background: url(/icons/search.png) no-repeat scroll right;
       background-size: 24px;
       background-color: white;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      box-shadow: 0px 2px 6px -1px rgb(0 0 0 / 35%);
 
       ::placeholder {
         color: #939393;

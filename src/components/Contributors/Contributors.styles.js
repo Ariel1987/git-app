@@ -4,7 +4,7 @@ export const Wrapper = styled.section`
   ${({ theme }) => css`
     background-color: white;
     grid-area: Contributors;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: 0px 2px 6px -1px rgb(0 0 0 / 35%);
     padding-right: 20px;
     padding-left: 20px;
 

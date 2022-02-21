@@ -1,7 +1,7 @@
 import SearchBar from '../SearchBar/SearchBar'
 import User from './User/User'
 import { RepositoryWrapper, SearchBarWrapper, Wrapper } from './Users.styles'
-import Repository from '../Repositories/Repository/Repository'
+import Card from '../Card/Card'
 
 const Users = () => {
   const n = 5
@@ -15,7 +15,7 @@ const Users = () => {
       <h2>Top 5 repositories</h2>
       <RepositoryWrapper>
         {[...Array(n)].map((e, i) => (
-          <Repository key={i} />
+          <Card key={i} />
         ))}
       </RepositoryWrapper>
     </Wrapper>

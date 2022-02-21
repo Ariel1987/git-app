@@ -8,7 +8,7 @@ export const Wrapper = styled.li`
     margin-top: 20px;
     padding: 8px;
     border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: 0px 2px 6px -1px rgb(0 0 0 / 35%);
 
     img {
       width: 15px;
