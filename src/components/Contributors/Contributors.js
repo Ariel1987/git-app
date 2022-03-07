@@ -1,15 +1,40 @@
 import { Wrapper } from './Contributors.styles'
-import Contributor from './Contributor/Contributor'
+import Card from '../Card/Card'
+import Avatar from '../Avatar/Avatar'
 
 const Contributors = () => {
-  const n = 10
+  const m = 10
+  const n = 5
 
   return (
     <Wrapper>
       <h1>Top 10 contributors</h1>
       <ul>
-        {[...Array(n)].map((e, i) => (
-          <Contributor key={i} />
+        {[...Array(m)].map((e, i) => (
+          <Card
+            key={i}
+            left={
+              <Avatar src="/imgs/avatar.jpg" alt="avatar" dimensions={50} />
+            }
+            right={
+              <>
+                <p>17k</p>
+                <img
+                  src="/icons/view.png"
+                  alt="views"
+                  height="18px"
+                  style={{ paddingLeft: '5px' }}
+                />
+              </>
+            }
+          >
+            <h3>Ariel1987</h3>
+            <div style={{ display: 'flex' }}>
+              {[...Array(n)].map((e, i) => (
+                <img src="/icons/star.png" alt="star" key={i} height="15px" />
+              ))}
+            </div>
+          </Card>
         ))}
       </ul>
     </Wrapper>

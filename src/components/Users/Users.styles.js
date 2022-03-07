@@ -20,10 +20,6 @@ export const Wrapper = styled.section`
     h3 {
       padding-bottom: 4px;
     }
-
-    p {
-      display: none;
-    }
   `}
 `
 
@@ -49,8 +45,4 @@ export const SearchBarWrapper = styled.section`
       }
     }
   `}
-`
-
-export const RepositoryWrapper = styled.ul`
-  margin: 0;
 `

@@ -19,5 +19,7 @@ export const Section = styled.section`
     position: absolute;
     top: 10px;
     right: 16px;
+    display: flex;
+    align-items: center;
   }
 `

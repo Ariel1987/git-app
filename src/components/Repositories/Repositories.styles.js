@@ -10,13 +10,9 @@ export const Wrapper = styled.section`
     height: 100%;
     overflow-y: auto;
 
-    
     h1 {
       font-size: 18px;
       padding-top: 40px;
-    }
-
-    ul {
     }
   `}
 `

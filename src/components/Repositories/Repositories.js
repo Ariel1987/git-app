@@ -13,16 +13,21 @@ const Repositories = () => {
         {[...Array(m)].map((e, i) => (
           <Card
             key={i}
-            left={<Avatar src='/imgs/avatar.jpg' alt='avatar' dimensions={100} />}
+            left={
+              <Avatar src="/imgs/avatar.jpg" alt="avatar" dimensions={100} />
+            }
             right={
-              <p>17k</p>
+              <>
+                <p>17k</p>
+                <img src="/icons/view.png" alt="views" height="18px" style={{ paddingLeft: '5px' }} />
+              </>
             }
           >
             <h3>Repository name</h3>
             <p>Author: Ariel Pires de Almeida</p>
             <div style={{ display: 'flex' }}>
               {[...Array(n)].map((e, i) => (
-                <img src="/icons/star.png" alt="star" key={i} height='15px' />
+                <img src="/icons/star.png" alt="star" key={i} height="15px" />
               ))}
             </div>
           </Card>
