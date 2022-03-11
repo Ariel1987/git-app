@@ -1,10 +1,11 @@
 import { Wrapper } from './User.styles'
+import Avatar from '../../atoms/Avatar/Avatar'
 
 const User = () => {
   return (
     <Wrapper>
       <div>
-        <img src="/imgs/avatar.jpg" alt="avatar" />
+        <Avatar src="/imgs/avatar.jpg" alt="avatar" dimensions={50} />
         <h1>Ariel1987</h1>
       </div>
       <div>

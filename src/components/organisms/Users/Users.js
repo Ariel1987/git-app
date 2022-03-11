@@ -1,5 +1,5 @@
 import SearchBar from '../../atoms/SearchBar/SearchBar'
-import User from './User/User'
+import User from '../../molecules/User/User'
 import { SearchBarWrapper, Wrapper } from './Users.styles'
 import Card from '../../molecules/Card/Card'
 import Avatar from '../../atoms/Avatar/Avatar'
