@@ -1,6 +1,6 @@
 import { Wrapper } from './Repositories.styles'
-import Card from '../Card/Card'
-import Avatar from '../Avatar/Avatar'
+import Card from '../../molecules/Card/Card'
+import Avatar from '../../atoms/Avatar/Avatar'
 
 const Repositories = () => {
   const n = 5

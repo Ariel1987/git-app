@@ -1,8 +1,8 @@
-import { Wrapper } from "./App.styles"
-import Contributors from "./components/Contributors/Contributors"
-import Header from "./components/Header/Header"
-import Repositories from "./components/Repositories/Repositories"
-import Users from "./components/Users/Users"
+import { Wrapper } from './App.styles'
+import Contributors from './components/organisms/Contributors/Contributors'
+import Header from './components/organisms/Header/Header'
+import Repositories from './components/organisms/Repositories/Repositories'
+import Users from './components/organisms/Users/Users'
 
 function App() {
   return (

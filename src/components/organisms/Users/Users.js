@@ -1,16 +1,21 @@
-import { Wrapper } from './Contributors.styles'
-import Card from '../Card/Card'
-import Avatar from '../Avatar/Avatar'
+import SearchBar from '../../atoms/SearchBar/SearchBar'
+import User from './User/User'
+import { SearchBarWrapper, Wrapper } from './Users.styles'
+import Card from '../../molecules/Card/Card'
+import Avatar from '../../atoms/Avatar/Avatar'
 
-const Contributors = () => {
-  const m = 10
+const Users = () => {
   const n = 5
 
   return (
     <Wrapper>
-      <h1>Top 10 contributors</h1>
+      <SearchBarWrapper>
+        <SearchBar type="user" />
+      </SearchBarWrapper>
+      <User />
+      <h2>Top 5 repositories</h2>
       <ul>
-        {[...Array(m)].map((e, i) => (
+        {[...Array(n)].map((e, i) => (
           <Card
             key={i}
             left={
@@ -28,7 +33,7 @@ const Contributors = () => {
               </>
             }
           >
-            <h3>Ariel1987</h3>
+            <h3>Repository name</h3>
             <div style={{ display: 'flex' }}>
               {[...Array(n)].map((e, i) => (
                 <img src="/icons/star.png" alt="star" key={i} height="15px" />
@@ -41,4 +46,4 @@ const Contributors = () => {
   )
 }
 
-export default Contributors
+export default Users

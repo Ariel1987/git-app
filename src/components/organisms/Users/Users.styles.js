@@ -27,22 +27,8 @@ export const SearchBarWrapper = styled.section`
   ${({ theme }) => css`
     display: flex;
     justify-content: center;
-    padding-top: 24px;
-
-    input {
-      width: 100%;
-      padding: 8px 8px;
-      border: none;
-      border-radius: 4px;
-      background: url(/icons/search.png) no-repeat scroll right;
-      background-size: 24px;
-      background-color: white;
-      box-shadow: 0px 2px 6px -1px rgb(0 0 0 / 35%);
-
-      ::placeholder {
-        color: #939393;
-        font-size: 16px;
-      }
-    }
+    margin-top: 24px;
+    box-shadow: 0px 2px 6px -1px rgb(0 0 0 / 35%);
+    border-radius: 4px;
   `}
 `
