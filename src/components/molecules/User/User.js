@@ -5,7 +5,7 @@ const User = () => {
   return (
     <Wrapper>
       <div>
-        <Avatar src="/imgs/avatar.jpg" alt="avatar" dimensions={50} />
+        <Avatar src="/imgs/avatar.jpg" alt="avatar" dimensions={75} />
         <h1>Ariel1987</h1>
       </div>
       <div>

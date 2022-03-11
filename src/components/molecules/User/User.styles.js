@@ -17,13 +17,6 @@ export const Wrapper = styled.section`
       h3 {
         font-size: 18px;
       }
-
-      img {
-        width: 50px;
-        height: auto;
-        border-radius: 50%;
-        margin-right: 8px;
-      }
     }
 
     div: last-of-type {
