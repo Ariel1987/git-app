@@ -23,7 +23,6 @@ const LeftSideBar = () => {
       </SearchBarWrapper>
       {userData && (
         <>
-          {' '}
           <User userData={userData} />
           <h2>Top 5 repositories</h2>
           <ul>
