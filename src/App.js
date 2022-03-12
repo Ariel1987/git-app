@@ -1,16 +1,16 @@
 import { Wrapper } from './App.styles'
-import Contributors from './components/organisms/Contributors/Contributors'
 import Header from './components/organisms/Header/Header'
-import Repositories from './components/organisms/Repositories/Repositories'
-import Users from './components/organisms/Users/Users'
+import RightSideBar from './components/organisms/RightSideBar/RightSideBar'
+import MainArea from './components/organisms/MainArea/MainArea'
+import LeftSideBar from './components/organisms/LeftSideBar/LeftSideBar'
 
 function App() {
   return (
     <Wrapper>
       <Header />
-      <Users />
-      <Repositories />
-      <Contributors />
+      <LeftSideBar />
+      <MainArea />
+      <RightSideBar />
     </Wrapper>
   )
 }

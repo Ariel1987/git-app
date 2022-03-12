@@ -1,5 +1,5 @@
 import { Wrapper } from './User.styles'
-import Avatar from '../../atoms/Avatar/Avatar'
+import Avatar from '../../../../atoms/Avatar/Avatar'
 
 const User = () => {
   return (

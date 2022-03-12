@@ -1,8 +1,8 @@
-import { Wrapper } from './Repositories.styles'
+import { Wrapper } from './MainArea.styles'
 import Card from '../../molecules/Card/Card'
 import Avatar from '../../atoms/Avatar/Avatar'
 
-const Repositories = () => {
+const MainArea = () => {
   const n = 5
   const m = 10
 
@@ -37,4 +37,4 @@ const Repositories = () => {
   )
 }
 
-export default Repositories
+export default MainArea

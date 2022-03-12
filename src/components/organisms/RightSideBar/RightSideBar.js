@@ -1,8 +1,8 @@
-import { Wrapper } from './Contributors.styles'
+import { Wrapper } from './RightSideBar.styles'
 import Card from '../../molecules/Card/Card'
 import Avatar from '../../atoms/Avatar/Avatar'
 
-const Contributors = () => {
+const RightSideBar = () => {
   const m = 10
   const n = 5
 
@@ -41,4 +41,4 @@ const Contributors = () => {
   )
 }
 
-export default Contributors
+export default RightSideBar

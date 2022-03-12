@@ -1,10 +1,10 @@
 import SearchBar from '../../atoms/SearchBar/SearchBar'
-import User from '../../molecules/User/User'
-import { SearchBarWrapper, Wrapper } from './Users.styles'
+import User from './components/User/User'
+import { SearchBarWrapper, Wrapper } from './LeftSideBar.styles'
 import Card from '../../molecules/Card/Card'
 import Avatar from '../../atoms/Avatar/Avatar'
 
-const Users = () => {
+const LeftSideBar = () => {
   const n = 5
 
   return (
@@ -46,4 +46,4 @@ const Users = () => {
   )
 }
 
-export default Users
+export default LeftSideBar
