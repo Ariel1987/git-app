@@ -1,5 +1,5 @@
 import { Wrapper } from './Header.styles'
-import SearchBar from '../../atoms/SearchBar/SearchBar'
+import SearchBar from '../../molecules/SearchBar/SearchBar'
 
 const Header = () => {
   return (

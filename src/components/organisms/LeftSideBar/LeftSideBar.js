@@ -1,4 +1,4 @@
-import SearchBar from '../../atoms/SearchBar/SearchBar'
+import SearchBar from '../../molecules/SearchBar/SearchBar'
 import User from './components/User/User'
 import { SearchBarWrapper, Wrapper } from './LeftSideBar.styles'
 import Card from '../../molecules/Card/Card'
@@ -8,8 +8,13 @@ import fetchAppDataByUser from '../../../utils/fetchAppDataByUser'
 
 const LeftSideBar = () => {
   const [username, setUsername] = useState('')
-
-  const userData = username === '' ? '' : fetchAppDataByUser(username)
+  const userData = ''
+  
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const userData = username === '' ? '' : fetchAppDataByUser(username)
+    console.log(userData)
+  }
 
   const n = 5
 
@@ -19,6 +24,7 @@ const LeftSideBar = () => {
         <SearchBar
           type="user"
           onChange={(event) => setUsername(event.target.value)}
+          onSubmit={handleSubmit}
         />
       </SearchBarWrapper>
       {userData && (
@@ -47,12 +53,7 @@ const LeftSideBar = () => {
                 <h3>Repository name</h3>
                 <div style={{ display: 'flex' }}>
                   {[...Array(n)].map((e, i) => (
-                    <img
-                      src="/icons/star.png"
-                      alt="star"
-                      key={i}
-                      height="15px"
-                    />
+                    <img src="/icons/star.png" alt="star" key={i} height="15px" />
                   ))}
                 </div>
               </Card>
