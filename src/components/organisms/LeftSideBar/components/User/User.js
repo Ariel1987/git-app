@@ -2,19 +2,17 @@ import { Wrapper } from './User.styles'
 import Avatar from '../../../../atoms/Avatar/Avatar'
 
 const User = (props) => {
-
-  console.log(props.userData)
   return (
     <Wrapper>
       <div>
-        <Avatar src={props.userData.avatar} alt="avatar" dimensions={75} />
-        <h1>{props.userData.username}</h1>
+        <Avatar src={props.userData.data?.avatar} alt="avatar" dimensions={75} />
+        <h1>{props.userData.data?.username}</h1>
       </div>
       <div>
-        <span>Followers: {props.userData.followers}</span>
-        <span>Following: {props.userData.following}</span>
+        <span>Followers: {props.userData.data?.followers}</span>
+        <span>Following: {props.userData.data?.following}</span>
       </div>
-      <h3>Repositories: {props.userData.repositories}</h3>
+      <h3>Repositories: {props.userData.data?.repositories}</h3>
     </Wrapper>
   )
 }

@@ -5,15 +5,27 @@ import Card from '../../molecules/Card/Card'
 import Avatar from '../../atoms/Avatar/Avatar'
 import { useState } from 'react'
 import fetchAppDataByUser from '../../../utils/fetchAppDataByUser'
+import {
+  FETCHING_DATA_ERROR,
+  FETCHING_DATA_SUCCESS,
+  useGithubData,
+} from '../../../context/githubData'
 
 const LeftSideBar = () => {
   const [username, setUsername] = useState('')
-  const userData = ''
-  
-  const handleSubmit = (event) => {
+  const { dispatch: dispatchGithubData, state: data } = useGithubData()
+
+  const handleSearchUser = async (event) => {
     event.preventDefault()
-    const userData = username === '' ? '' : fetchAppDataByUser(username)
-    console.log(userData)
+
+    try {
+      const response = await fetchAppDataByUser(username)
+
+      dispatchGithubData({ type: FETCHING_DATA_SUCCESS, payload: response })
+    } catch (error) {
+      dispatchGithubData({ type: FETCHING_DATA_ERROR })
+    }
+    setUsername('')
   }
 
   const n = 5
@@ -24,12 +36,13 @@ const LeftSideBar = () => {
         <SearchBar
           text="user"
           onChange={(event) => setUsername(event.target.value)}
-          onSubmit={handleSubmit}
+          onSubmit={handleSearchUser}
+          value={username}
         />
       </SearchBarWrapper>
-      {userData && (
+      {data != null && (
         <>
-          <User userData={userData} />
+          <User userData={data} />
           <h2>Top 5 repositories</h2>
           <ul>
             {[...Array(n)].map((e, i) => (
@@ -53,7 +66,12 @@ const LeftSideBar = () => {
                 <h3>Repository name</h3>
                 <div style={{ display: 'flex' }}>
                   {[...Array(n)].map((e, i) => (
-                    <img src="/icons/star.png" alt="star" key={i} height="15px" />
+                    <img
+                      src="/icons/star.png"
+                      alt="star"
+                      key={i}
+                      height="15px"
+                    />
                   ))}
                 </div>
               </Card>
