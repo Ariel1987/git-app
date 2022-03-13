@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <Wrapper>
       <img src="/icons/logo.png" alt="logo" />
-        <SearchBar type={'repository'} />
+        <SearchBar text={'repository'} />
     </Wrapper>
   )
 }

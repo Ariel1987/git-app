@@ -22,7 +22,7 @@ const LeftSideBar = () => {
     <Wrapper>
       <SearchBarWrapper>
         <SearchBar
-          type="user"
+          text="user"
           onChange={(event) => setUsername(event.target.value)}
           onSubmit={handleSubmit}
         />

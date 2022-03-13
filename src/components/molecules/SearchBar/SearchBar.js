@@ -6,7 +6,7 @@ const SearchBar = (props) => {
       <input
         type="text"
         id="repository"
-        placeholder={`Search ${props.type}`}
+        placeholder={`Search ${props.text}`}
         onChange={props.onChange}
       />
       <button type="submit">
