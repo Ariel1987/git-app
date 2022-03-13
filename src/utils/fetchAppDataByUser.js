@@ -1,4 +1,5 @@
 import userApi from '../services/userApi'
+import userRepositoriesApi from '../services/userRepositoriesApi'
 
 const fetchAppDataByUser = async (username) => {
   const payload = {
@@ -7,6 +8,7 @@ const fetchAppDataByUser = async (username) => {
     followers: null,
     following: null,
     repositories: null,
+    reposData: null,
   }
 
   try {
@@ -16,6 +18,9 @@ const fetchAppDataByUser = async (username) => {
     payload.followers = githubApiResult.data.followers
     payload.following = githubApiResult.data.following
     payload.repositories = githubApiResult.data.public_repos
+
+    const githubReposApiResult = await userRepositoriesApi(username)
+    payload.reposData = githubReposApiResult
 
     return payload
   } catch (error) {

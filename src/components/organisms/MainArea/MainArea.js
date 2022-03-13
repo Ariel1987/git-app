@@ -1,10 +1,15 @@
 import { Wrapper } from './MainArea.styles'
 import Card from '../../molecules/Card/Card'
 import Avatar from '../../atoms/Avatar/Avatar'
+import fetchAppDataByRepos from '../../../utils/fetchAppDataByRepos'
+import { useGithubData } from '../../../context/githubData'
 
 const MainArea = () => {
+  const { state } = useGithubData()
+
   const n = 5
   const m = 10
+  console.log(fetchAppDataByRepos())
 
   return (
     <Wrapper>
