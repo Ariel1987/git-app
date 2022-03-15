@@ -6,7 +6,7 @@ const User = (props) => {
     <Wrapper>
       <div>
         <Avatar src={props.userData.data?.avatar} alt="avatar" dimensions={75} />
-        <h1>{props.userData.data?.username}</h1>
+        <h2><a href={props.userData.data?.profileUrl}>{props.userData.data?.username}</a></h2>
       </div>
       <div>
         <span>Followers: {props.userData.data?.followers}</span>

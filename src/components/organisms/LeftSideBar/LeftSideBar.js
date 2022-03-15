@@ -12,7 +12,7 @@ import {
 
 const LeftSideBar = () => {
   const [username, setUsername] = useState('')
-  const { dispatch: dispatchGithubData, state: data } = useGithubData()
+  const { dispatch: dispatchGithubData, state: github } = useGithubData()
 
   const handleSearchUser = async (event) => {
     event.preventDefault()
@@ -28,7 +28,6 @@ const LeftSideBar = () => {
   }
 
   const n = 5
-  console.log(data)
   return (
     <Wrapper>
       <SearchBarWrapper>
@@ -36,35 +35,47 @@ const LeftSideBar = () => {
           text="user"
           onChange={(event) => setUsername(event.target.value)}
           onSubmit={handleSearchUser}
+          value={username}
         />
       </SearchBarWrapper>
-      <User userData={data} />
-      <h2>Top 5 repositories</h2>
-      <ul>
-        {data.data?.reposData.data.slice(0, 5).map((data, i) => (
-          <Card
-            key={i}
-            right={
-              <>
-                <p>{data.watchers_count}</p>
-                <img
-                  src="/icons/view.png"
-                  alt="views"
-                  height="18px"
-                  style={{ paddingLeft: '5px' }}
-                />
-              </>
-            }
-          >
-            <h3>{data.name}</h3>
-            <div style={{ display: 'flex' }}>
-              {[...Array(n)].map((e, i) => (
-                <img src="/icons/star.png" alt="star" key={i} height="15px" />
-              ))}
-            </div>
-          </Card>
-        ))}
-      </ul>
+      {github.data ? (
+        <>
+          <User userData={github} />
+          <h2>Top 5 repositories</h2>
+          <ul>
+            {github?.data?.reposData.slice(0, 5).map((data) => (
+              <Card
+                key={data.id}
+                right={
+                  <>
+                    <p>{data.watchers_count}</p>
+                    <img
+                      src="/icons/view.png"
+                      alt="views"
+                      height="18px"
+                      style={{ paddingLeft: '5px' }}
+                    />
+                  </>
+                }
+              >
+                <h3>
+                  <a href={data.html_url}>{data.name}</a>
+                </h3>
+                <div style={{ display: 'flex' }}>
+                  {[...Array(n)].map((e, i) => (
+                    <img
+                      src="/icons/star.png"
+                      alt="star"
+                      key={i}
+                      height="15px"
+                    />
+                  ))}
+                </div>
+              </Card>
+            ))}
+          </ul>
+        </>
+      ) : null}
     </Wrapper>
   )
 }

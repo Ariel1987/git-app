@@ -1,16 +1,23 @@
 import { Wrapper } from './MainArea.styles'
 import Card from '../../molecules/Card/Card'
 import Avatar from '../../atoms/Avatar/Avatar'
+import { useEffect, useState } from 'react'
 import fetchAppDataByRepos from '../../../utils/fetchAppDataByRepos'
-import { useGithubData } from '../../../context/githubData'
 
 const MainArea = () => {
-  const { state } = useGithubData()
+  const [repos, setRepos] = useState()
 
   const n = 5
   const m = 10
-  console.log(fetchAppDataByRepos())
 
+  useEffect(() => {
+    const fetchRepos = async () => {
+      setRepos(await fetchAppDataByRepos())
+    }
+    fetchRepos()
+  }, [])
+
+  console.log(repos)
   return (
     <Wrapper>
       <h1>Top 10 repositories</h1>

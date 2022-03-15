@@ -1,13 +1,14 @@
 import { Wrapper } from './SearchBar.styles'
 
-const SearchBar = (props) => {
+const SearchBar = ({ onSubmit, text, onChange, value }) => {
   return (
-    <Wrapper onSubmit={props.onSubmit}>
+    <Wrapper onSubmit={onSubmit}>
       <input
         type="text"
         id="repository"
-        placeholder={`Search ${props.text}`}
-        onChange={props.onChange}
+        placeholder={`Search ${text}`}
+        onChange={onChange}
+        value={value}
       />
       <button type="submit">
         <img src="/icons/search.png" alt="search" />
