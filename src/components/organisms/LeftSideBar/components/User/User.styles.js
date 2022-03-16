@@ -17,6 +17,10 @@ export const Wrapper = styled.section`
       h3 {
         font-size: 18px;
       }
+
+      p {
+        font-size: 10px;
+      }
     }
 
     div: last-of-type {

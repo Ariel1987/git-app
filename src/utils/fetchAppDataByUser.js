@@ -5,7 +5,7 @@ const fetchAppDataByUser = async (username) => {
   try {
     const githubReposApiResult = await userRepositoriesApi(username)
     const githubApiResult = await userApi(username)
-    const { avatar_url, login, followers, following, public_repos, html_url } = githubApiResult.data
+    const { avatar_url, login, followers, following, public_repos, html_url, company } = githubApiResult.data
     const payload = {
       avatar: avatar_url,
       username: login,
@@ -14,6 +14,7 @@ const fetchAppDataByUser = async (username) => {
       repositories: public_repos,
       profileUrl: html_url,
       reposData: githubReposApiResult.data,
+      company: company
     }
     
     return payload

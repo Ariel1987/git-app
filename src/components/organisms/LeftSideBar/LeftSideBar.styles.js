@@ -8,13 +8,15 @@ export const Wrapper = styled.section`
     padding-left: 15%;
     z-index: 10;
     box-shadow: 0px 2px 6px -1px rgb(0 0 0 / 35%);
+    height: 100%;
+    overflow-y: auto;
+
 
     h1 {
       font-size: 18px;
     }
 
     h2 {
-      padding-top: 40px;
     }
 
     h3 {

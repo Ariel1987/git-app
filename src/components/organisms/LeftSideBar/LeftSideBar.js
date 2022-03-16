@@ -50,7 +50,7 @@ const LeftSideBar = () => {
       {github.data ? (
         <>
           <User userData={github} />
-          <h2>Top 5 repositories</h2>
+          <h2 style={{ paddingTop: '40px' }}>Top 5 repositories</h2>
           <ul>
             {github?.data?.reposData.sort(sortRepositories).slice(0, 5).map((data) => (
               <Card
@@ -86,5 +86,3 @@ const LeftSideBar = () => {
 }
 
 export default LeftSideBar
-
-//const n = github?.data?.reposData.watchers_count > 5 ? 5 : github?.data?.reposData.watchers_count 

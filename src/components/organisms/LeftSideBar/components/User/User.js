@@ -6,7 +6,12 @@ const User = ({ userData }) => {
     <Wrapper>
       <div>
         <Avatar src={userData.data?.avatar} alt="avatar" dimensions={75} />
-        <h2><a href={userData.data?.profileUrl}>{userData.data?.username}</a></h2>
+        <section>
+          <h2>
+            <a href={userData.data?.profileUrl}>{userData.data?.username}</a>
+          </h2>
+          <p>{userData.data?.company}</p>
+        </section>
       </div>
       <div>
         <span>Followers: {userData.data?.followers}</span>
