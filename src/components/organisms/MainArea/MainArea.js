@@ -9,7 +9,6 @@ const MainArea = () => {
   const [repos, setRepos] = useState()
 
   const n = 5
-  const m = 10
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -18,26 +17,34 @@ const MainArea = () => {
     fetchRepos()
   }, [])
 
-  console.log(repos)
   return (
     <Wrapper>
       <h1>Top 10 repositories</h1>
       <ul>
-        {[...Array(m)].map((e, i) => (
+        {repos?.data.slice(0, 10).map((data) => (
           <Card
-            key={i}
+            key={data.id}
             left={
-              <Avatar src="/imgs/avatar.jpg" alt="avatar" dimensions={100} />
+              <Avatar
+                src={data.owner.avatar_url}
+                alt="avatar"
+                dimensions={100}
+              />
             }
-            right={
-              <>
-                <p>17k</p>
-                <img src="/icons/view.png" alt="views" height="18px" style={{ paddingLeft: '5px' }} />
-              </>
+            right={''
+              // <>
+              //   <p>17k</p>
+              //   <img
+              //     src="/icons/view.png"
+              //     alt="views"
+              //     height="18px"
+              //     style={{ paddingLeft: '5px' }}
+              //   />
+              // </>
             }
           >
-            <h3>Repository name</h3>
-            <p>Author: Ariel Pires de Almeida</p>
+            <h3>{data.name}</h3>
+            <p>Author: {data.owner.login}</p>
             <div style={{ display: 'flex' }}>
               {[...Array(n)].map((e, i) => (
                 <Star key={i} />
