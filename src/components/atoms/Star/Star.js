@@ -1,5 +1,7 @@
+import { Image } from "./Star.styles"
+
 const Star = () => {
-  return <img src="/icons/star.png" alt="star" height="15px" />
+  return <Image src="/icons/star.png" alt="star" height="15px" />
 }
 
 export default Star
