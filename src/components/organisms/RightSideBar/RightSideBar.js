@@ -1,6 +1,7 @@
 import { Wrapper } from './RightSideBar.styles'
 import Card from '../../molecules/Card/Card'
 import Avatar from '../../atoms/Avatar/Avatar'
+import Star from '../../atoms/Star/Star'
 
 const RightSideBar = () => {
   const m = 10
@@ -31,7 +32,7 @@ const RightSideBar = () => {
             <h3>Ariel1987</h3>
             <div style={{ display: 'flex' }}>
               {[...Array(n)].map((e, i) => (
-                <img src="/icons/star.png" alt="star" key={i} height="15px" />
+                <Star key={i} />
               ))}
             </div>
           </Card>

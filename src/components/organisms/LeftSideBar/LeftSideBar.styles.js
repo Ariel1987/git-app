@@ -20,6 +20,12 @@ export const Wrapper = styled.section`
     h3 {
       padding-bottom: 4px;
     }
+
+    h4 {
+      text-align: center;
+      padding-top: 16px;
+    }
+
   `}
 `
 
@@ -30,5 +36,14 @@ export const SearchBarWrapper = styled.section`
     margin-top: 24px;
     box-shadow: 0px 2px 6px -1px rgb(0 0 0 / 35%);
     border-radius: 4px;
+  `}
+`
+
+export const MessageWrapper = styled.section`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
   `}
 `

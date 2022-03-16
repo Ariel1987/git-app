@@ -1,6 +1,6 @@
 import SearchBar from '../../molecules/SearchBar/SearchBar'
 import User from './components/User/User'
-import { SearchBarWrapper, Wrapper } from './LeftSideBar.styles'
+import { MessageWrapper, SearchBarWrapper, Wrapper } from './LeftSideBar.styles'
 import Card from '../../molecules/Card/Card'
 import { useState } from 'react'
 import fetchAppDataByUser from '../../../utils/fetchAppDataByUser'
@@ -9,6 +9,7 @@ import {
   FETCHING_DATA_SUCCESS,
   useGithubData,
 } from '../../../context/githubData'
+import Star from '../../atoms/Star/Star'
 
 const LeftSideBar = () => {
   const [username, setUsername] = useState('')
@@ -63,19 +64,19 @@ const LeftSideBar = () => {
                 </h3>
                 <div style={{ display: 'flex' }}>
                   {[...Array(n)].map((e, i) => (
-                    <img
-                      src="/icons/star.png"
-                      alt="star"
-                      key={i}
-                      height="15px"
-                    />
+                    <Star key={i} />
                   ))}
                 </div>
               </Card>
             ))}
           </ul>
         </>
-      ) : null}
+      ) : (
+        <MessageWrapper>
+          <img src='/icons/github.png' alt='github' height='80px' width='80px' />
+          <h4>Search for a Github User</h4>
+        </MessageWrapper>
+      )}
     </Wrapper>
   )
 }

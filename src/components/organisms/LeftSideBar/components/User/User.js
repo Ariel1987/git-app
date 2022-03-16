@@ -1,18 +1,18 @@
 import { Wrapper } from './User.styles'
 import Avatar from '../../../../atoms/Avatar/Avatar'
 
-const User = (props) => {
+const User = ({ userData }) => {
   return (
     <Wrapper>
       <div>
-        <Avatar src={props.userData.data?.avatar} alt="avatar" dimensions={75} />
-        <h2><a href={props.userData.data?.profileUrl}>{props.userData.data?.username}</a></h2>
+        <Avatar src={userData.data?.avatar} alt="avatar" dimensions={75} />
+        <h2><a href={userData.data?.profileUrl}>{userData.data?.username}</a></h2>
       </div>
       <div>
-        <span>Followers: {props.userData.data?.followers}</span>
-        <span>Following: {props.userData.data?.following}</span>
+        <span>Followers: {userData.data?.followers}</span>
+        <span>Following: {userData.data?.following}</span>
       </div>
-      <h3>Repositories: {props.userData.data?.repositories}</h3>
+      <h3>Repositories: {userData.data?.repositories}</h3>
     </Wrapper>
   )
 }

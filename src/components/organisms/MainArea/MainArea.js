@@ -3,6 +3,7 @@ import Card from '../../molecules/Card/Card'
 import Avatar from '../../atoms/Avatar/Avatar'
 import { useEffect, useState } from 'react'
 import fetchAppDataByRepos from '../../../utils/fetchAppDataByRepos'
+import Star from '../../atoms/Star/Star'
 
 const MainArea = () => {
   const [repos, setRepos] = useState()
@@ -39,7 +40,7 @@ const MainArea = () => {
             <p>Author: Ariel Pires de Almeida</p>
             <div style={{ display: 'flex' }}>
               {[...Array(n)].map((e, i) => (
-                <img src="/icons/star.png" alt="star" key={i} height="15px" />
+                <Star key={i} />
               ))}
             </div>
           </Card>
