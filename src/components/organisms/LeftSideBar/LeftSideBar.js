@@ -9,7 +9,6 @@ import {
   FETCHING_DATA_SUCCESS,
   useGithubData,
 } from '../../../context/githubData'
-import Star from '../../atoms/Star/Star'
 
 const LeftSideBar = () => {
   const [username, setUsername] = useState('')
@@ -28,7 +27,16 @@ const LeftSideBar = () => {
     setUsername('')
   }
 
-  const n = 5
+  const sortRepositories = (a, b) => {
+    if (a.watchers_count > b.watchers_count) {
+      return -1;
+    }
+    if (a.watchers_count < b.watchers_count) {
+      return 1;
+    }
+    return 0;
+  }
+
   return (
     <Wrapper>
       <SearchBarWrapper>
@@ -44,7 +52,7 @@ const LeftSideBar = () => {
           <User userData={github} />
           <h2>Top 5 repositories</h2>
           <ul>
-            {github?.data?.reposData.slice(0, 5).map((data) => (
+            {github?.data?.reposData.sort(sortRepositories).slice(0, 5).map((data) => (
               <Card
                 key={data.id}
                 right={
@@ -62,11 +70,7 @@ const LeftSideBar = () => {
                 <h3>
                   <a href={data.html_url}>{data.name}</a>
                 </h3>
-                <div style={{ display: 'flex' }}>
-                  {[...Array(n)].map((e, i) => (
-                    <Star key={i} />
-                  ))}
-                </div>
+                <p>Description: {data.description}</p>
               </Card>
             ))}
           </ul>
@@ -82,3 +86,5 @@ const LeftSideBar = () => {
 }
 
 export default LeftSideBar
+
+//const n = github?.data?.reposData.watchers_count > 5 ? 5 : github?.data?.reposData.watchers_count 

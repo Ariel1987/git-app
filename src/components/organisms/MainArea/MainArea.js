@@ -3,12 +3,9 @@ import Card from '../../molecules/Card/Card'
 import Avatar from '../../atoms/Avatar/Avatar'
 import { useEffect, useState } from 'react'
 import fetchAppDataByRepos from '../../../utils/fetchAppDataByRepos'
-import Star from '../../atoms/Star/Star'
 
 const MainArea = () => {
   const [repos, setRepos] = useState()
-
-  const n = 5
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -45,11 +42,7 @@ const MainArea = () => {
           >
             <h3>{data.name}</h3>
             <p>Author: {data.owner.login}</p>
-            <div style={{ display: 'flex' }}>
-              {[...Array(n)].map((e, i) => (
-                <Star key={i} />
-              ))}
-            </div>
+            <p>Description: {data.description}</p>
           </Card>
         ))}
       </ul>

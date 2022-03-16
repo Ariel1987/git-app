@@ -1,40 +1,42 @@
 import { Wrapper } from './RightSideBar.styles'
 import Card from '../../molecules/Card/Card'
 import Avatar from '../../atoms/Avatar/Avatar'
-import Star from '../../atoms/Star/Star'
+import { useEffect, useState } from 'react'
+import fetchAppDataByUsers from '../../../utils/fetchAppDataByUsers'
 
 const RightSideBar = () => {
-  const m = 10
-  const n = 5
+  const [repos, setRepos] = useState()
+
+  useEffect(() => {
+    const fetchRepos = async () => {
+      setRepos(await fetchAppDataByUsers())
+    }
+    fetchRepos()
+  }, [])
 
   return (
     <Wrapper>
       <h1>Top 10 contributors</h1>
       <ul>
-        {[...Array(m)].map((e, i) => (
+        {repos?.data.slice(0, 10).map((data) => (
           <Card
-            key={i}
+            key={data.id}
             left={
-              <Avatar src="/imgs/avatar.jpg" alt="avatar" dimensions={50} />
+              <Avatar src={data.avatar_url} alt="avatar" dimensions={50} />
             }
-            right={
-              <>
-                <p>17k</p>
-                <img
-                  src="/icons/view.png"
-                  alt="views"
-                  height="18px"
-                  style={{ paddingLeft: '5px' }}
-                />
-              </>
+            right={''
+              // <>
+              //   <p>17k</p>
+              //   <img
+              //     src="/icons/view.png"
+              //     alt="views"
+              //     height="18px"
+              //     style={{ paddingLeft: '5px' }}
+              //   />
+              // </>
             }
           >
-            <h3>Ariel1987</h3>
-            <div style={{ display: 'flex' }}>
-              {[...Array(n)].map((e, i) => (
-                <Star key={i} />
-              ))}
-            </div>
+            <h3><a href={data.html_url}>{data.login}</a></h3>
           </Card>
         ))}
       </ul>

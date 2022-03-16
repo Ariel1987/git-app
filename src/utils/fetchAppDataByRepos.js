@@ -2,7 +2,7 @@ import reposApi from "../services/reposApi"
 
 const fetchAppDataByRepos = async () => {
   const payload = {
-    data: null
+    data: null,
   }
 
   try {
